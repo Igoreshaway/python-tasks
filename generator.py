@@ -17,4 +17,4 @@ def generator(list_with_words: list[str, ...]) -> list[int, ...]:
         yield j
 
 
-test_list = generator(['one', 'two', 'three', 'long number'])
+
