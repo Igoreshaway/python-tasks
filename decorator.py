@@ -13,13 +13,14 @@ def timeit(func):
         print(f'End time {end_time}')
         print(f'Total time {total_time:.2f} seconds')
         return result
+
     return timeit_wrapper
+
 
 @timeit
 def test_function(num: int):
     total = sum((x for x in range(0, num ** 3)))
     return total
 
+
 test_function(1000)
-
-
