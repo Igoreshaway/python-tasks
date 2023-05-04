@@ -4,8 +4,7 @@ def element_length_calculation(list_with_words: list[str, ...]):
         if not isinstance(i, str):
             raise ValueError('The list must contain only strings')
 
-        elif isinstance(i, str):
-            list_with_len.insert(0, len(i))
+        list_with_len.insert(0, len(i))
 
     return list_with_len
 
