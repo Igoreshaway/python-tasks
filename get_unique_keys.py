@@ -1,53 +1,51 @@
 source_dict = {"Cook Book": [
     {"Dish A": ["oil", "bacon", "oil"]},
-    {"Dish B": ["eggs", "oil", "eggs"]}
+    {"Dish B": ["eggs", "oil", "eggs"]},
+    {"Dish B": ["bacon", "oil", "bacon"]}
 ]}
 
-dict_ingredients = source_dict['Cook Book']
 
+def unpack_dict_to_list(source_dict: dict) -> list:
+    dict_dishes = source_dict['Cook Book']
 
-def dictionary_unpacking_to_a_list(dict_books: list[dict]) -> list:
     list_with_lists_ingredients = []
-    for li in dict_books:
-        list_with_lists_ingredients += li.values()
+    for dish in dict_dishes:
+        list_with_lists_ingredients += dish.values()
 
-    list_with_ingredients = [x for l in list_with_lists_ingredients for x in l]
-    return list_with_ingredients
+    list_ingredients = []
+    for i in list_with_lists_ingredients:
+        list_ingredients.extend(i)
+    return list_ingredients
 
 
-def unique_ingredients(dict_books: list[dict]) -> list:
-    list_ingredients = dictionary_unpacking_to_a_list(dict_books)
-    list_unique_ingredients = []
+def get_unique_ingredients(source_dict: dict) -> set:
+    list_ingredients = unpack_dict_to_list(source_dict)
+    unique_ingredients = set()
 
     for i in list_ingredients:
-        if i not in list_unique_ingredients:
-            list_unique_ingredients.append(i)
+        unique_ingredients.add(i)
 
-    return list_unique_ingredients
-
-
-def counting_the_ingredients(dict_books: list[dict]) -> list[int] and list[str]:
-    list_ingredients = dictionary_unpacking_to_a_list(dict_books)
-    list_unique_ingredients = unique_ingredients(dict_books)
-    count_ingredient = []
-    for i in list_unique_ingredients:
-        count_ingredient.append(list_ingredients.count(i))
-
-    return count_ingredient, list_unique_ingredients, list_ingredients
+    return unique_ingredients
 
 
-def sort_count_ingredients(dict_books: list[dict]) -> list:
-    count_ingredients, list_unique_ingredients, list_ingredients = counting_the_ingredients(dict_books)
-    sort_list_count_ingredients = sorted(count_ingredients, reverse=True)
-    sort_list_ingredients = []
-    for i in sort_list_count_ingredients:
-        for j in list_ingredients:
-            if i == list_ingredients.count(j) and j not in sort_list_ingredients:
-                sort_list_ingredients.append(j)
+def get_count_ingredients(source_dict: dict) -> dict:
+    list_ingredients = unpack_dict_to_list(source_dict)
+    dict_count_and_name_ingredients = {}
 
-    return sort_list_ingredients
+    for j in list_ingredients:
+        if j not in dict_count_and_name_ingredients:
+            dict_count_and_name_ingredients[list_ingredients.count(j)] = j
+    print(dict_count_and_name_ingredients)
+
+    return dict_count_and_name_ingredients
 
 
-list_unique_ingredients = unique_ingredients(dict_ingredients)
-sort_ing = sort_count_ingredients(dict_ingredients)
+def sort_count_ingredients(source_dict: dict) -> list:
+    dict_count_and_name_ingredients = get_count_ingredients(source_dict)
+    sort_dict_count_and_name_ingredients = dict(sorted(dict_count_and_name_ingredients.items(), reverse=True))
+    return list(sort_dict_count_and_name_ingredients.values())
+
+
+list_unique_ingredients = get_unique_ingredients(source_dict)
+sort_ing = sort_count_ingredients(source_dict)
 print(sort_ing)
