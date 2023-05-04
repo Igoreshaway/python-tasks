@@ -4,7 +4,7 @@ def convert_string_to_int(convertible_string: str) -> int:
     """
     This function converts a string consisting of numbers to a number
 
-    :param conv_str: string to be converted
+    :param convertible_string: string to be converted
     :return: this function returns the received number
     """
     if not convertible_string.isnumeric():
