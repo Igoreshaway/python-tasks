@@ -10,10 +10,10 @@ def convert_string_to_int(conv_str: str) -> int:
     if not conv_str.isnumeric():
         raise ValueError('Please enter a string consisting of numbers only')
 
-    elif conv_str.isnumeric():
-        res = 0
+    if conv_str.isnumeric():
+        result = 0
         for c in conv_str:
-            res = res * 10 + ord(c) - ord('0')
+            result = result * 10 + ord(c) - ord('0')
 
-        return res
+        return result
 
