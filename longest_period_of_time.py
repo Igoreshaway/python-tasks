@@ -1,4 +1,3 @@
-
 def longest_time(h: int, m: int, s: int) -> int:
     """
     This function compares time periods and returns the longest
@@ -10,13 +9,12 @@ def longest_time(h: int, m: int, s: int) -> int:
     if not isinstance(h, int) or not isinstance(m, int) or not isinstance(s, int):
         raise TypeError("Please enter positive integers")
 
-    if isinstance(h, int) or isinstance(h, int) or isinstance(h, int):
-        conv_h = h * 3600
-        conv_min = m * 60
+    conv_h = h * 3600
+    conv_min = m * 60
 
-        time_dict = {h: conv_h, m: conv_min, s: s}
-        max_value = max(time_dict.values())
+    time_dict = {h: conv_h, m: conv_min, s: s}
+    max_value = max(time_dict.values())
 
-        for k, v in time_dict.items():
-            if max_value == v:
-                return k
+    for k, v in time_dict.items():
+        if max_value == v:
+            return k
