@@ -12,9 +12,10 @@ def longest_time(h: int, m: int, s: int) -> int:
     conv_h = h * 3600
     conv_min = m * 60
 
-    time_dict = {h: conv_h, m: conv_min, s: s}
-    max_value = max(time_dict.values())
+    time_dict = {conv_h: h, conv_min: m, s: s}
+    max_value = max(time_dict.keys())
 
-    for k, v in time_dict.items():
-        if max_value == v:
-            return k
+    return time_dict[max_value]
+
+k = longest_time(1, 59, 3598)
+print(k)
