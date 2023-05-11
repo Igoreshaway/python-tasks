@@ -3,8 +3,9 @@ import aiohttp
 
 
 class ImageDownloader:
+    SEARCH_RANDOM_IMAGES_URL = 'https://api.thecatapi.com/v1/images/search'
+
     def __init__(self, loop, number_needed_images=2):
-        self.SEARCH_RANDOM_IMAGES_URL = 'https://api.thecatapi.com/v1/images/search'
         self.number_needed_images = number_needed_images
         self.loop = loop
 
