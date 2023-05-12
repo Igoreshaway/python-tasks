@@ -35,7 +35,7 @@ pigeons = ['Бакинский агаран', 'Богемская волшебн
            'Южнонемецкая голова мавра', 'Пермский желтый высоколётный', 'Орловский белый', 'Дрезденский барабанщик',
            'Турецкий голубой', 'Узбекский белый короткоклювый']
 
-print(len(pigeons))
+
 
 
 def get_group_of_pigeons(iter_pigeons: iter, number_pigeons_for_group=2) -> list[str]:
@@ -63,5 +63,3 @@ def get_groups_of_pigeons(pigeons: list, number_pigeons_for_group=2) -> list[lis
 
 
 pairs_pigeons = get_groups_of_pigeons(pigeons, number_pigeons_for_group=6)
-print(len(pairs_pigeons))
-print(pairs_pigeons)
