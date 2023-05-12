@@ -38,31 +38,6 @@ pigeons = ['Бакинский агаран', 'Богемская волшебн
 print(len(pigeons))
 
 
-# def get_groups_of_pigeons(pigeons: list, number_pigeons_for_group=2) -> list[list]:
-#     iter_pigeons = iter(pigeons)
-#     groups_pigeons = []
-#     group_pigeons = []
-#
-#     presence_of_next_element = True
-#     while presence_of_next_element:
-#         try:
-#             pigeon = next((iter_pigeons))
-#             if len(group_pigeons) < number_pigeons_for_group:
-#                 group_pigeons.append(pigeon)
-#             elif len(group_pigeons) == number_pigeons_for_group:
-#                 groups_pigeons.append(group_pigeons)
-#                 group_pigeons = []
-#         except StopIteration:
-#             groups_pigeons.append(group_pigeons)
-#             if len(groups_pigeons[-1]) < number_pigeons_for_group:
-#                 last_group = groups_pigeons[-1]
-#                 difference_len_between_last_and_need_group = number_pigeons_for_group - len(last_group)
-#                 filling_last_group_none = [None] * difference_len_between_last_and_need_group
-#                 last_group.extend(filling_last_group_none)
-#             presence_of_next_element = False
-#
-#     return groups_pigeons
-
 def get_group_of_pigeons(iter_pigeons: iter, number_pigeons_for_group=2) -> list[str]:
     group_pigeons = []
     while len(group_pigeons) < number_pigeons_for_group:
