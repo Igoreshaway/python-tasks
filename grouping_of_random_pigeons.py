@@ -35,6 +35,7 @@ pigeons = ['Бакинский агаран', 'Богемская волшебн
            'Южнонемецкая голова мавра', 'Пермский желтый высоколётный', 'Орловский белый', 'Дрезденский барабанщик',
            'Турецкий голубой', 'Узбекский белый короткоклювый']
 
+
 def get_group_of_pigeons(iter_pigeons: iter, number_pigeons_for_group=2) -> list[str]:
     group_pigeons = []
     while len(group_pigeons) < number_pigeons_for_group:
@@ -63,6 +64,4 @@ def get_groups_of_pigeons(pigeons: list, number_pigeons_for_group=2) -> list[lis
 groups_pigeons = get_groups_of_pigeons(pigeons, number_pigeons_for_group=6)
 print(groups_pigeons)
 
-
 test_list = ["1", "2", "3", "4", "5", "6"]
-
