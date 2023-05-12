@@ -4,12 +4,12 @@ PATH_TO_DIRECTORY = './files_directory'
 
 
 def get_files_path() -> list[str]:
-    list_with_files_names_in_directory = os.listdir(PATH_TO_DIRECTORY)
-    list_file_path = []
-    for index in range(len(list_with_files_names_in_directory)):
-        path_to_file = os.path.join(PATH_TO_DIRECTORY, list_with_files_names_in_directory[index])
-        list_file_path.append(path_to_file)
-    return list_file_path
+    files_names_in_directory = os.listdir(PATH_TO_DIRECTORY)
+    files_paths = []
+    for index in files_names_in_directory:
+        path_to_file = os.path.join(PATH_TO_DIRECTORY, index)
+        files_paths.append(path_to_file)
+    return files_paths
 
 
 def get_largest_files(number_files: int = 2) -> list[str]:
