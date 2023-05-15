@@ -10,26 +10,6 @@ content = {
 }
 
 
-# def get_nesting_level(content: dict) -> dict[str, int]:
-#     tmp = [content]
-#     result = {}
-#     nesting_level = 0
-#     while tmp:
-#         elem = tmp.pop()
-#         key = str(elem.keys())
-#         result[key] = nesting_level
-#         nesting_level += 1
-#         if type(elem) == dict:
-#             for obj in elem.values():
-#                 if type(obj) == dict:
-#                     tmp.append(obj)
-#                     # result[obj] = nesting_level
-#                     # nesting_level += 1
-#                 else:
-#                     print(obj)
-#     return result
-
-
 def get_nesting_level(content: dict, result: dict = None, nesting_level: int = 0) -> dict[str, int]:
     if result is None:
         result = {}
