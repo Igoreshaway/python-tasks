@@ -15,6 +15,7 @@ def get_nesting_level(content: dict, result: dict = None, nesting_level: int = 0
         result = {}
     for_unpack = [content]
     get_elem_key = for_unpack[0].keys()
+
     if len(get_elem_key) > 1:
         for i in get_elem_key:
             result[i] = nesting_level
