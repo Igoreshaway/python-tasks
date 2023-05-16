@@ -35,9 +35,6 @@ def get_nesting_level(source_dict: dict, dict_with_number_nesting_level: dict = 
 
     for key, value in source_dict.items():
         dict_with_number_nesting_level[key] = nesting_level
-        if len(key) > 1:
-            for nesting_key in source_dict.keys():
-                dict_with_number_nesting_level[nesting_key] = nesting_level
         if value:
             get_nesting_level(value, dict_with_number_nesting_level, nesting_level=nesting_level + 1)
     return dict_with_number_nesting_level
